@@ -1,0 +1,20 @@
+mkdir dir_name  -> create new directory in current space
+
+touch test_file.txt   -> create file
+
+open test_file.txt  
+
+cp test_file.txt copy_file.txt  -> create copy of test_file
+
+mv test_file.txt orig_file.txt  -> rename file to orig_file
+
+mv orig_file.txt SubDir1/  -> move file orig_file to SubDir directory
+
+mv orig_file.txt ../test_file.txt  -> move orig_file up and rename it to test_file
+
+rm copy_file.txt  -> delete copy_file.txt
+
+cp -R TestDir/ CopyDir/  -> copy the entire directory
+
+rm -rf TestDir/  -> permanently remove directory 
+
