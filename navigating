@@ -1,0 +1,16 @@
+pwd    -> currently working directory
+
+ls     -> directories in current folder 
+
+cd     -> change directory
+
+ls -a    -> all files including hidden files
+
+ls -l    -> long form of showing internal folders with permissions
+
+cd ..    -> switch folder up
+
+cd ~     -> switch to home directory 
+
+./folder/file -> short form of switching to selected file
+
