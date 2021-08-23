@@ -1,0 +1,27 @@
+find name_file&dir  -> listing files/dir with specified name
+
+find . -type d  -> listing all directories in current folder
+
+find . -type f  -> listing all files in current folder
+
+find . -type f -name "name_of_file"  -> show path to selected file
+
+find . -type f -name "test*"  -> list all files started with test on the beginning in name
+
+find . -type f -iname "test*"  -> list files started with test, including upper letters in name
+
+find . -type f -name "*.py"  -> list all files in .py format
+
+find . -type f -mmin -10  -> list all files modified in last 10 minutes
+
+find . -type f -mmin +1 -mmin -5  -> list all files modified more than 1 minute ago and less than 5 minutes ago
+
+find . -type f -mtime +20  -> list elements modified more than 20 days ago
+
+find . -size +5M  -> find all files greater than 5 megabytes
+
+
+find . -perm 777  -> finding through permissions
+
+
+
