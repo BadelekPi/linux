@@ -16,7 +16,23 @@ grep -win "John" ./*  -> print number of files with file name of matching words
 
 grep -win "John" ./*.txt  -> print number of files with file name of matching words in current type of file
 
+grep -winr "John" .
+
+grep -winr "John" ./
+
+grep -wirl "John" .  -> print files contains matching word
+
 -----------------------------------------------------------------------------------------------------------
+
+history  -> show last written commends
+
+history | grep "git commit"  -> show last written git commit commend 
+
+history | grep "git commit" | grep "dotfile"  -> show last commends contains both commit and dotfile
+
+
+
+
 
 
 
