@@ -1,0 +1,22 @@
+grep "John" names.txt  -> search john in names file
+
+grep -w "John" names.txt  -> put only all fiting search name
+
+grep -wi "John" names.txt  -> lower and upper  in match words
+
+grep -win "John" names.txt  -> print line with match word
+
+grep -win -B 4 "John" names.txt  -> print matching words and 4 lines before them
+
+grep -win -A 4 "John" names.txt  -> print matching words and 4 lines after them
+
+grep -win -C 2 "John" names.txt  -> print matching words and 2 lines before and after them
+
+grep -win "John" ./*  -> print number of files with file name of matching words
+
+grep -win "John" ./*.txt  -> print number of files with file name of matching words in current type of file
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
