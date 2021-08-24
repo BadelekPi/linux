@@ -30,6 +30,8 @@ history | grep "git commit"  -> show last written git commit commend
 
 history | grep "git commit" | grep "dotfile"  -> show last commends contains both commit and dotfile
 
+grep "...-...-...." names.txt  -> show matching number phones, using regullar verbs
+
 
 
 
