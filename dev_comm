@@ -10,3 +10,10 @@ lspci -k - info z jakich modulow kernela korzysta urzedzenia
 lsusb - info o wszystkich urzedzeniach podlaczonych do kompa
 lsusb -t - info do ktorego konkrentego kontrolera usb jest podlaczone usb
 
+ls /usr/lib/udev/rules.d/
+less /usr/lib/udev/rules.d/99-systemd.rules
+less /usr/lib/udev/rules.d/40-usb-media-players.rules
+
+highest priority
+ls /etc/udev/rules.d
+less /etc/udev/rules.d/60-vbox.rules
