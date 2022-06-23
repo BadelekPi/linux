@@ -1,0 +1,12 @@
+lsblk
+ls /dev
+watch lsblk
+ls /dev/sd* - ogranicza do informacji o dyskach
+ls /dev/cpu
+sudo modprobe msr - modul ladujacy info o corach procesora
+ls /dev/dri - info o karcie graficznej
+lspci - info o urzedzeniach pci
+lspci -k - info z jakich modulow kernela korzysta urzedzenia
+lsusb - info o wszystkich urzedzeniach podlaczonych do kompa
+lsusb -t - info do ktorego konkrentego kontrolera usb jest podlaczone usb
+
