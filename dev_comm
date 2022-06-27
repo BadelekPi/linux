@@ -17,3 +17,21 @@ less /usr/lib/udev/rules.d/40-usb-media-players.rules
 highest priority
 ls /etc/udev/rules.d
 less /etc/udev/rules.d/60-vbox.rules
+
+qemu-img info ubuntu.img
+virsh --connect qemu:///system vol-create-as default ubuntu_cloud 2.2G --format qcow2
+virsh pool-define-as --name default --type dir --target /media/badi/kvm
+sudo virsh pool-start default
+sudo virsh pool-autostart default
+virsh --connect qemu:///system vol-upload --pool default ubuntu_cloud ./ubuntu.img
+virsh --connect qemu:///system vol-info --pool default --vol ubuntu_cloud
+
+sudo genisoimage -output cidisk.iso -volid cidata -joliet -r ./user-data ./meta-data
+sudo usermod -a -G libvirt $(whoami)
+sudo virt-install --connect qemu:///system --import --name ubuntu_cloud --ram 2048 --vcpu 2 --disk vol=default/ubuntu_cloud --disk ./cidisk.iso,device=cdrom --network bridge=virbr0,model=virtio --os-variant=ubuntu16.04 --os-type=linux --noautoconsole --graphics spice
+
+virsh --connect qemu:///system domiflist ubuntu_cloud
+ssh -i ../.ssh/id_rsa ubuntu@192.168.122.3
+
+
+ls -ladZ dir1
