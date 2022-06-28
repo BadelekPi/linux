@@ -1,0 +1,27 @@
+----- Check exist vmx flag
+lscpu
+grep --color vmx /proc/cpuinfo
+
+----- Install kvm packages (libvirt-bin was dropped in 18.10)
+sudo apt update; sudo apt upgrade -y; sudo apt full-upgrade -y; sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager virtinst cloud-image-utils -y
+sudo apt install qemu -y
+
+----- Turn on comprehensive virtualization
+cat /sys/module/kvm_intel/parameters/nested
+ 	: u have to get 'Y' flag
+
+-- if comprehensive virtualization isn't active:
+sudo vim /etc/modprobe.d/qemu-system-x86.conf
+
+-- folder when our images will be save:
+ls /var/lib/libvirt/ -la
+
+-- add user in virtualization
+sudo adduser badi libvirt-qemu
+sudo adduser badi libvirt
+
+-- configure daemon which virtualizes
+	unix_sock_group = "libvirt"
+	unix_sock_rw_perms = "0770" 
+
+
